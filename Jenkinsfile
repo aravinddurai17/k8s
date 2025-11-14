@@ -16,7 +16,7 @@ pipeline {
 
         stage('Verify Deployment') {
             steps {
-                sh 'kubectl get deployments'
+                sh 'kubectl get deployments --insecure-skip-tls-verify'
                 sh 'kubectl get pods --insecure-skip-tls-verify'
             }
         }
